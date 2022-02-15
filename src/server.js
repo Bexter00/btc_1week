@@ -7,7 +7,7 @@ const { User } = require("./models/user");
 const e = require("express");
 
 const MONGO_URL =
-  "mongodb+srv://mongodb:1CcNpxHHk9QrR7km@mongodbtutorial.4wahk.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+  "mongodb+srv://mongodb:<password>@mongodbtutorial.4wahk.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 
 const server = async () => {
   try {
