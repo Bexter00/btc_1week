@@ -4,7 +4,6 @@ app.use(express.json());
 const mongoose = require("mongoose");
 const lightwallet = require("eth-lightwallet");
 const { User } = require("./models/user");
-const e = require("express");
 
 const MONGO_URL =
   "mongodb+srv://mongodb:<password>@mongodbtutorial.4wahk.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
@@ -16,8 +15,11 @@ const server = async () => {
 
     app.get("/user", async (req, res) => {
       try {
-        let { user, passwd } = req.body;
-        const users = await User.findOne({ userName: user, password: passwd });
+        let { username, password } = req.body;
+        const users = await User.findOne({
+          userName: username,
+          password: password,
+        });
         return res.send({ users });
       } catch (err) {
         console.log(err);
